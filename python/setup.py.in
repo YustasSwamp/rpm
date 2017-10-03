@@ -18,10 +18,10 @@ additional_link_args = []
 # See if we're building in-tree
 if os.access('Makefile.am', os.F_OK):
     cflags.append('-I../include')
-    additional_link_args.extend(['-Wl,-L../rpmio/.libs',
-                                 '-Wl,-L../lib/.libs',
-                                 '-Wl,-L../build/.libs',
-                                 '-Wl,-L../sign/.libs'])
+    additional_link_args.extend(['-L../rpmio/.libs',
+                                 '-L../lib/.libs',
+                                 '-L../build/.libs',
+                                 '-L../sign/.libs'])
     os.environ['PKG_CONFIG_PATH'] = '..'
 
 
